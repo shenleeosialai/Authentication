@@ -5,5 +5,5 @@ app_name = 'account'
 
 urlpatterns = [
     path('', include('django.contrib.auth.urls')),
-    path('dahboard/',views.dashboard, name='dashboard'),
+    path('', views.dashboard, name='dashboard')
 ]
