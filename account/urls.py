@@ -1,8 +1,8 @@
-from django.urls import path
+from django.urls import include, path
 from .import views
 
 app_name = 'account'
 
 urlpatterns = [
-    path('login/', views.user_login, name='user login')
+    path('', include('django.contrib.auth.urls'))
 ]
