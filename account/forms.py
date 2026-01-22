@@ -7,7 +7,7 @@ class LoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password eg 123@wrf'}))
 
 
-class UserRegistrationForm(forms.MOdelForm):
+class UserRegistrationForm(forms.ModelForm):
     password = forms.CharField(
         label='password',
         widget=forms.PasswordInput
