@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}Authentication App{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link href="{% static "css/base.css" %}" rel="stylesheet">
   </head>
   <body>
     <div id="header">
@@ -13,7 +13,7 @@
       {% if request.user.is_authenticated %}
         <ul class="menu">
           <li {% if section == 'dashboard' %}class="selected"{% endif %}>
-            <a href="{% url 'account:dashboard' %}">Dashboard</a></li>
+            <a href="{% url "account:dashboard" %}">Dashboard</a></li>
           <li {% if section == 'images' %}class="selected"{% endif %}>
             <a href="#">Images</a></li>
           <li {% if section == 'people' %}class="selected"{% endif %}>
@@ -23,12 +23,12 @@
       <span class="user">
         {% if request.user.is_authenticated %}
           Hello, {{ request.user.first_name|default:request.user.username }}
-          <form action="{% url 'logout'}" method="post">
+          <form action="{% url "account:logout" %}" method="post">
             <button type="submit">Logout</button>
             {% csrf_token %}
           </form>
         {% else %}
-          <a href="{% url 'login' %}">Login</a>
+          <a href="{% url "account:login" %}">Login</a>
         {% endif %}
       </span>
     </div>
