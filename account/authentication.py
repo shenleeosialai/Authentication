@@ -19,6 +19,6 @@ class EmailAuthBackend:
             return None
 
 
-def Create_profile(backend, user, *args, **kwargs):
+def create_profile(backend, user, *args, **kwargs):
     """create user profile for social authentication"""
     Profile.objects.get_or_create(user=user)

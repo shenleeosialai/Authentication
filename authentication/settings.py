@@ -122,7 +122,7 @@ STATIC_URL = 'static/'
 
 LOGIN_REDIRECT_URL = 'account:dashboard'
 LOGIN_URL = 'account:login'
-LOGOUT_URL = 'account:logout'
+LOGOUT_URL = 'account:login'
 
 
 MEDIA_URL = 'media/'
