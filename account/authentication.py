@@ -3,7 +3,7 @@ from account.models import Profile
 
 class EmailAuthBackend:
     """ Authentication using email"""
-    def authenticate(self, reqest, username=None, password=None, **kwargs):
+    def authenticate(self, request, username=None, password=None, **kwargs):
         try:
             user = User.objects.get(email=username)
             if user.check_password(password):
